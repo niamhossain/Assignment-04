@@ -47,7 +47,7 @@
 
         <main class="w-9/12 mx-auto pt-[30px] pb-[60px]">
 
-            <section>
+            <section id="allSection">
                     <div class="flex justify-between">
                         <h2 class="text-[20px] font-semibold">Available Jobs</h2>
                         <p class="text-neutral-500">8 Jobs</p>
@@ -61,8 +61,10 @@
         
                     <!-- Cards -->
                      <div class="allCardsContainer flex flex-col gap-4">
-                        <!-- Mobile card  -->
-                        <div class="card bg-base-100 shadow-sm"> 
+
+                <!-- Mobile card  -->
+
+                        <div class="card bg-base-100 shadow-sm" id="mobileCard"> 
                              <div class="card-body">
                                  <h2 class="card-title">Mobile First Corp</h2>
                                  <p class="text-base text-neutral-500 pb-3">React Native Developer</p>
@@ -78,13 +80,15 @@
                                  <p class="mb-5 text-neutral-600">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                                  <!-- Interview+RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="mblInterview" onclick="interview('mblInterview','mblStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="mblRejected" onclick="rejected('mblRejected','mblStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="mblInterview" onclick="checkInterview('mblInterview','mblStatus','mobileCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="mblRejected" onclick="checkInterview('mblInterview','mblStatus','mobileCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
-                         <!-- flow card -->
-                         <div class="card bg-base-100 shadow-sm">
+
+                <!-- flow card -->
+
+                         <div class="card bg-base-100 shadow-sm" id="flowCard">
                              <div class="card-body">
                                  <h2 class="card-title">WebFlow Agency</h2>
                                  <p class="text-base text-neutral-500 pb-3">Web Designer & Developer</p>
@@ -100,13 +104,15 @@
                                  <p class="mb-5 text-neutral-600">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="flowInterview" onclick="interview('flowInterview','flowStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="flowRejected" onclick="rejected('flowRejected','flowStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="flowInterview" onclick="checkInterview('flowInterview','flowStatus', 'flowCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="flowRejected" onclick="checkInterview('flowRejected','flowStatus', 'flowCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
-                         <!-- dataviz card -->
-                         <div class="card bg-base-100 shadow-sm">
+
+                <!-- dataviz card -->
+
+                         <div class="card bg-base-100 shadow-sm" id="datavizCard">
                              <div class="card-body">
                                  <h2 class="card-title">DataViz Solutions</h2>
                                  <p class="text-base text-neutral-500 pb-3">Data Visualization Specialist</p>
@@ -122,13 +128,15 @@
                                  <p class="mb-5 text-neutral-600">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="datavizInterview" onclick="interview('datavizInterview','datavizStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="datavizRejected" onclick="rejected('datavizRejected','datavizStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="datavizInterview" onclick="checkInterview('datavizInterview','datavizStatus', 'datavizCard' )">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="datavizRejected" onclick="checkInterview('datavizRejected','datavizStatus', 'datavizCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
-                         <!-- cloudfirst card -->
-                         <div class="card bg-base-100 shadow-sm">
+
+                <!-- cloudfirst card -->
+
+                         <div class="card bg-base-100 shadow-sm" id="cloudCard">
                              <div class="card-body">
                                  <h2 class="card-title">CloudFirst Inc</h2>
                                  <p class="text-base text-neutral-500 pb-3">Backend Developer</p>
@@ -144,13 +152,15 @@
                                  <p class="mb-5 text-neutral-600">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="cloudInterview" onclick="interview('cloudInterview','cloudStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="cloudRejected" onclick="rejected('cloudRejected','cloudStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="cloudInterview" onclick="checkInterview('cloudInterview','cloudStatus', 'cloudCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="cloudRejected" onclick="checkInterview('cloudRejected','cloudStatus', 'cloudCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
-                         <!-- innovtion card -->
-                         <div class="card bg-base-100 shadow-sm">
+
+                <!-- innovtion card -->
+
+                         <div class="card bg-base-100 shadow-sm" id="innoCard">
                              <div class="card-body">
                                  <h2 class="card-title">Innovation Labs</h2>
                                  <p class="text-base text-neutral-500 pb-3">UI/UX Engineer</p>
@@ -166,13 +176,15 @@
                                  <p class="mb-5 text-neutral-600">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="innoInterview" onclick="interview('innoInterview','innoStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="innoRejected" onclick="rejected('innoRejected','innoStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="innoInterview" onclick="checkInterview('innoInterview','innoStatus', 'innoCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="innoRejected" onclick="checkInterview('innoRejected','innoStatus', 'innoCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
-                         <!-- megacorp card -->
-                         <div class="card bg-base-100 shadow-sm">
+                         
+                <!-- megacorp card -->
+
+                         <div class="card bg-base-100 shadow-sm" id="megaCard">
                              <div class="card-body">
                                  <h2 class="card-title">MegaCorp Solutions</h2>
                                  <p class="text-base text-neutral-500 pb-3">JavaScript Developer</p>
@@ -188,13 +200,15 @@
                                  <p class="mb-5 text-neutral-600">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="megaInterview" onclick="interview('megaInterview','megaStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="megaRejected" onclick="rejected('megaRejected','megaStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="megaInterview" onclick="checkInterview('megaInterview','megaStatus', 'megaCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="megaRejected" onclick="checkInterview('megaRejected','megaStatus', 'megaCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
-                         <!-- startup card -->
-                         <div class="card bg-base-100 shadow-sm">
+                         
+                <!-- startup card -->
+
+                         <div class="card bg-base-100 shadow-sm" id="startupCard">
                              <div class="card-body">
                                  <h2 class="card-title">StartupXYZ</h2>
                                  <p class="text-base text-neutral-500 pb-3">Full Stack Engineer</p>
@@ -210,13 +224,16 @@
                                  <p class="mb-5 text-neutral-600">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="startupInterview" onclick="interview('startupInterview','startupStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="startupRejected" onclick="rejected('startupRejected','startupStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="startupInterview" onclick="checkInterview('startupInterview','startupStatus', 'startupCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="startupRejected" onclick="checkInterview('startupRejected','startupStatus', 'startupCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
-                         <!-- techCorp card -->
-                         <div class="card bg-base-100 shadow-sm">
+                         
+                         
+                <!-- techCorp card -->
+
+                         <div class="card bg-base-100 shadow-sm" id="techcorpCard">
                              <div class="card-body">
                                  <h2 class="card-title">TechCorp Industries</h2>
                                  <p class="text-base text-neutral-500 pb-3">Senior Frontend Developer</p>
@@ -232,12 +249,27 @@
                                  <p class="mb-5 text-neutral-600">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="techcorpInterview" onclick="interview('techcorpInterview','techcorpStatus')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="techcorpRejected" onclick="rejected('techcorpRejected','techcorpStatus')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="techcorpInterview" onclick="checkInterview('techcorpInterview','techcorpStatus', 'techcorpCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-error" id="techcorpRejected" onclick="checkInterview('techcorpRejected','techcorpStatus', 'techcorpCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
                      </div>
+            </section>
+
+
+            <!-- interview section -->
+            <section>
+                <div class="allCardsContainer flex flex-col gap-4" id="interviewCards">
+
+                </div>
+            </section>
+
+            <!-- rejected section -->
+            <section>
+                <div class="allCardsContainer flex flex-col gap-4" id="rejectedCards">
+
+                </div>
             </section>
         </main>
 
