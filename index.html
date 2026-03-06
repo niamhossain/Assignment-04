@@ -47,18 +47,21 @@
 
         <main class="w-9/12 mx-auto pt-[30px] pb-[60px]">
 
-            <section id="allSection">
-                    <div class="flex justify-between">
+            <section>
+                <div class="flex justify-between">
                         <h2 class="text-[20px] font-semibold">Available Jobs</h2>
                         <p class="text-neutral-500">8 Jobs</p>
                     </div>
                     <!-- Buttons -->
                     <div class="flex gap-2 pt-6 mb-4">
-                        <button class="btn btn-primary">All</button>
-                        <button class="btn text-neutral-500">Interview</button>
-                        <button class="btn text-neutral-500">Rejected</button>
+                        <button class="btn btn-primary" id="allButton">All</button>
+                        <button class="btn text-neutral-500" id="interviewButton">Interview</button>
+                        <button class="btn text-neutral-500" id="rejectedButton">Rejected</button>
                     </div>
-        
+            </section>
+            
+            <section id="allSect">
+                    
                     <!-- Cards -->
                      <div class="allCardsContainer flex flex-col gap-4">
 
@@ -75,13 +78,13 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="cursor-default btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="mblStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="mblStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                                  <!-- Interview+RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="mblInterview" onclick="checkInterview('mblInterview','mblStatus','mobileCard')">INTERIEW</button>
-                                 <button class="btn btn-outline btn-error" id="mblRejected" onclick="checkInterview('mblInterview','mblStatus','mobileCard')">REJECTED</button>
+                                 <button class="btn btn-outline btn-success" id="mblInterview" onclick="checkInterview('mblInterview','mblStatus','mobileCard')">INTERVIEW</button>
+                                 <button class="btn btn-outline btn-error" id="mblRejected" onclick="checkInterview('mblRejected','mblStatus','mobileCard')">REJECTED</button>
                                  </div>
                              </div>
                          </div>
@@ -99,12 +102,12 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="flowStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="flowStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="flowInterview" onclick="checkInterview('flowInterview','flowStatus', 'flowCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-success" id="flowInterview" onclick="checkInterview('flowInterview','flowStatus', 'flowCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="flowRejected" onclick="checkInterview('flowRejected','flowStatus', 'flowCard')">REJECTED</button>
                                  </div>
                              </div>
@@ -123,12 +126,12 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="datavizStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="datavizStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="datavizInterview" onclick="checkInterview('datavizInterview','datavizStatus', 'datavizCard' )">INTERIEW</button>
+                                 <button class="btn btn-outline btn-success" id="datavizInterview" onclick="checkInterview('datavizInterview','datavizStatus', 'datavizCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="datavizRejected" onclick="checkInterview('datavizRejected','datavizStatus', 'datavizCard')">REJECTED</button>
                                  </div>
                              </div>
@@ -147,12 +150,12 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="cloudStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="cloudStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="cloudInterview" onclick="checkInterview('cloudInterview','cloudStatus', 'cloudCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-success" id="cloudInterview" onclick="checkInterview('cloudInterview','cloudStatus', 'cloudCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="cloudRejected" onclick="checkInterview('cloudRejected','cloudStatus', 'cloudCard')">REJECTED</button>
                                  </div>
                              </div>
@@ -171,12 +174,12 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="innoStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="innoStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="innoInterview" onclick="checkInterview('innoInterview','innoStatus', 'innoCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-success" id="innoInterview" onclick="checkInterview('innoInterview','innoStatus', 'innoCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="innoRejected" onclick="checkInterview('innoRejected','innoStatus', 'innoCard')">REJECTED</button>
                                  </div>
                              </div>
@@ -195,12 +198,12 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="megaStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="megaStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="megaInterview" onclick="checkInterview('megaInterview','megaStatus', 'megaCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-success" id="megaInterview" onclick="checkInterview('megaInterview','megaStatus', 'megaCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="megaRejected" onclick="checkInterview('megaRejected','megaStatus', 'megaCard')">REJECTED</button>
                                  </div>
                              </div>
@@ -219,12 +222,12 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="startupStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="startupStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="startupInterview" onclick="checkInterview('startupInterview','startupStatus', 'startupCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-success" id="startupInterview" onclick="checkInterview('startupInterview','startupStatus', 'startupCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="startupRejected" onclick="checkInterview('startupRejected','startupStatus', 'startupCard')">REJECTED</button>
                                  </div>
                              </div>
@@ -244,12 +247,12 @@
                                  </ul>
                                  <br>
                                  <div>
-                                     <button class="btn btn-active bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="techcorpStatus">NOT APPLIED</button>
+                                     <button class="btn btn-active cursor-default  bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="techcorpStatus">NOT APPLIED</button>
                                  </div>
                                  <p class="mb-5 text-neutral-600">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div>
-                                 <button class="btn btn-outline btn-success" id="techcorpInterview" onclick="checkInterview('techcorpInterview','techcorpStatus', 'techcorpCard')">INTERIEW</button>
+                                 <button class="btn btn-outline btn-success" id="techcorpInterview" onclick="checkInterview('techcorpInterview','techcorpStatus', 'techcorpCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="techcorpRejected" onclick="checkInterview('techcorpRejected','techcorpStatus', 'techcorpCard')">REJECTED</button>
                                  </div>
                              </div>
@@ -259,14 +262,14 @@
 
 
             <!-- interview section -->
-            <section>
+            <section class="hidden" id="intSect">
                 <div class="allCardsContainer flex flex-col gap-4" id="interviewCards">
 
                 </div>
             </section>
 
             <!-- rejected section -->
-            <section>
+            <section class="hidden" id="rejSect">
                 <div class="allCardsContainer flex flex-col gap-4" id="rejectedCards">
 
                 </div>
