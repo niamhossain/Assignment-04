@@ -1,4 +1,10 @@
+let totalInt = (Number)(document.getElementById("totalInterview").innerText);
+let totalRej = (Number)(document.getElementById("totalRejected").innerText);
+let totalApply = (Number)(document.getElementById("totalApplied").innerText);
+
 // adding interview and rejected
+
+
 
 function checkInterview(buttons,status,cardDivs){
             const mblStatus = document.getElementById(status);
@@ -14,6 +20,9 @@ function checkInterview(buttons,status,cardDivs){
                 return;
             }
             else if(button.innerText==="INTERVIEW"){
+                if(mblStatus.innerText==="REJECTED"){
+                    totalRej--;
+                }
                 mblStatus.classList.remove('bg-[#EEF4FF]','btn-error');
                 mblStatus.classList.add('btn-success','text-white');
                 mblStatus.innerText = "INTERVIEW";
@@ -24,8 +33,14 @@ function checkInterview(buttons,status,cardDivs){
                     prevClone.remove();
                 }
                 intSect.append(cloneDiv);
+                totalInt++;
+                document.getElementById("totalInterview").innerHTML = totalInt;
+                document.getElementById("totalRejected").innerHTML = totalRej;
             }
             else if(button.innerText==="REJECTED"){
+                if(mblStatus.innerText==="INTERVIEW"){
+                    totalInt--;
+                }
                 mblStatus.classList.remove('bg-[#EEF4FF]','btn-success');
                 mblStatus.classList.add('btn-error','text-white');
                 mblStatus.innerText = "REJECTED";
@@ -36,6 +51,9 @@ function checkInterview(buttons,status,cardDivs){
                     prevClone.remove();
                 }
                 rejSect.append(cloneDiv);
+                totalRej++;
+                document.getElementById("totalRejected").innerHTML = totalRej;
+                document.getElementById("totalInterview").innerHTML = totalInt;
             }
     }
 
