@@ -20,7 +20,7 @@
 </head>
 <body class="bg-base-200 pb-7">
         <header class="w-9/12 mx-auto pt-[60px] pb-[30px] border-b-2 border-base-300">
-            <h1 class="text-2xl font-bold pb-5">Job Application Tracker</h1>
+            <h1 class="flex justify-center sm:justify-start text-2xl font-bold pb-5">Job Application Tracker</h1>
 
             <div class="cardContainer grid grid-cols-3 gap-4">
 
@@ -54,7 +54,7 @@
                         <p class="text-neutral-500"> <span id="totalAppliedjobs">8</span> Jobs</p>
                     </div>
                     <!-- Buttons -->
-                    <div class="flex gap-2 pt-6 mb-4">
+                    <div class="flex gap-2 justify-center sm:justify-start pt-6 mb-4">
                         <button class="btn btn-primary" id="allButton">All</button>
                         <button class="btn text-neutral-500" id="interviewButton">Interview</button>
                         <button class="btn text-neutral-500" id="rejectedButton">Rejected</button>
@@ -70,18 +70,18 @@
 
                         <div class="card bg-base-100 shadow-sm relative" id="mobileCard"> 
                              <div class="card-body">
-                                 <h2 class="card-title">Mobile First Corp</h2>
-                                 <p class="text-base text-neutral-500 pb-3">React Native Developer</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
+                                 <h2 class="card-title flex justify-center sm:justify-start">Mobile First Corp</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">React Native Developer</p>
+                                 <ul class="flex gap-8 text-neutral-500 justify-center sm:justify-start">
                                      <li class="list-disc sm:list-none">Remote</li>
                                      <li class="list-disc">Full-time</li>
                                      <li class="list-disc">$130,000 - $175,000</li>
                                  </ul>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="mblStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                                  <!-- Interview+RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="mblInterview" onclick="checkInterview('mblInterview','mblStatus','mobileCard')">INTERVIEW</button>
@@ -89,7 +89,7 @@
                                  </div>
                              </div>
                              <div>
-                                <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="mobileDel" onclick="remove('mobileCard','mblStatus')"></i>
+                                <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="mobileDel" onclick="remove('mobileCard','mblStatus')"></i>
                              </div>
                          </div>
 
@@ -97,150 +97,154 @@
 
                          <div class="card bg-base-100 shadow-sm" id="flowCard">
                              <div class="card-body">
-                                 <h2 class="card-title">WebFlow Agency</h2>
-                                 <p class="text-base text-neutral-500 pb-3">Web Designer & Developer</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
-                                     <li class="list-disc sm:list-none">Los Angeles, CA</li>
-                                     <li class="list-disc">Part-time</li>
-                                     <li class="list-disc">$80,000 - $120,000</li>
-                                 </ul>
+                                 <h2 class="card-title flex justify-center sm:justify-start">WebFlow Agency</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">Web Designer & Developer</p>
+                                 <div class="flex justify-center sm:justify-start">
+                                     <ul class="flex gap- gap-8 text-neutral-500 ">
+                                         <li class="list-disc sm:list-none">Los Angeles, CA</li>
+                                         <li class="list-disc">Part-time</li>
+                                         <li class="list-disc">$80,000 - $120,000</li>
+                                     </ul>
+                                 </div>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="flowStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="flowInterview" onclick="checkInterview('flowInterview','flowStatus', 'flowCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="flowRejected" onclick="checkInterview('flowRejected','flowStatus', 'flowCard')">REJECTED</button>
                                  </div>
                              </div>
-                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="flowDel" onclick="remove('flowCard','flowStatus')"></i>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="flowDel" onclick="remove('flowCard','flowStatus')"></i>
                          </div>
 
                 <!-- dataviz card -->
 
                          <div class="card bg-base-100 shadow-sm" id="datavizCard">
                              <div class="card-body">
-                                 <h2 class="card-title">DataViz Solutions</h2>
-                                 <p class="text-base text-neutral-500 pb-3">Data Visualization Specialist</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
-                                     <li class="list-disc sm:list-none">Boston, MA</li>
-                                     <li class="list-disc">Full-time</li>
-                                     <li class="list-disc">$125,000 - $165,000</li>
-                                 </ul>
+                                 <h2 class="card-title flex justify-center sm:justify-start">DataViz Solutions</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">Data Visualization Specialist</p>
+                                 <div class="flex justify-center sm:justify-start">
+                                     <ul class="flex gap-8 text-neutral-500">
+                                         <li class="list-disc sm:list-none">Boston, MA</li>
+                                         <li class="list-disc">Full-time</li>
+                                         <li class="list-disc">$125,000 - $165,000</li>
+                                     </ul>
+                                 </div>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="datavizStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="datavizInterview" onclick="checkInterview('datavizInterview','datavizStatus', 'datavizCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="datavizRejected" onclick="checkInterview('datavizRejected','datavizStatus', 'datavizCard')">REJECTED</button>
                                  </div>
                              </div>
-                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="datavizDel" onclick="remove('datavizCard','datavizStatus')"></i>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="datavizDel" onclick="remove('datavizCard','datavizStatus')"></i>
                          </div>
 
                 <!-- cloudfirst card -->
 
                          <div class="card bg-base-100 shadow-sm" id="cloudCard">
                              <div class="card-body">
-                                 <h2 class="card-title">CloudFirst Inc</h2>
-                                 <p class="text-base text-neutral-500 pb-3">Backend Developer</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
+                                 <h2 class="card-title flex justify-center sm:justify-start">CloudFirst Inc</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">Backend Developer</p>
+                                 <ul class="flex gap-8 text-neutral-500 justify-center sm:justify-start">
                                      <li class="list-disc sm:list-none">Seattle, WA</li>
                                      <li class="list-disc">Full-time</li>
                                      <li class="list-disc">$140,000 - $190,000</li>
                                  </ul>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="cloudStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="cloudInterview" onclick="checkInterview('cloudInterview','cloudStatus', 'cloudCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="cloudRejected" onclick="checkInterview('cloudRejected','cloudStatus', 'cloudCard')">REJECTED</button>
                                  </div>
                              </div>
-                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="cloudDel" onclick="remove('cloudCard','cloudStatus')"></i>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="cloudDel" onclick="remove('cloudCard','cloudStatus')"></i>
                          </div>
 
                 <!-- innovtion card -->
 
                          <div class="card bg-base-100 shadow-sm" id="innoCard">
                              <div class="card-body">
-                                 <h2 class="card-title">Innovation Labs</h2>
-                                 <p class="text-base text-neutral-500 pb-3">UI/UX Engineer</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
+                                 <h2 class="card-title flex justify-center sm:justify-start">Innovation Labs</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">UI/UX Engineer</p>
+                                 <ul class="flex justify-center sm:justify-start gap-8 text-neutral-500">
                                      <li class="list-disc sm:list-none">Austin, TX</li>
                                      <li class="list-disc">Full-time</li>
                                      <li class="list-disc">$110,000 - $150,000</li>
                                  </ul>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="innoStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="innoInterview" onclick="checkInterview('innoInterview','innoStatus', 'innoCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="innoRejected" onclick="checkInterview('innoRejected','innoStatus', 'innoCard')">REJECTED</button>
                                  </div>
                              </div>
-                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="innoDel" onclick="remove('innoCard','innoStatus')"></i>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="innoDel" onclick="remove('innoCard','innoStatus')"></i>
                          </div>
                          
                 <!-- megacorp card -->
 
                          <div class="card bg-base-100 shadow-sm" id="megaCard">
                              <div class="card-body">
-                                 <h2 class="card-title">MegaCorp Solutions</h2>
-                                 <p class="text-base text-neutral-500 pb-3">JavaScript Developer</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
+                                 <h2 class="card-title flex justify-center sm:justify-start">MegaCorp Solutions</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">JavaScript Developer</p>
+                                 <ul class="flex justify-center sm:justify-start gap-8 text-neutral-500">
                                      <li class="list-disc sm:list-none">New York, NY</li>
                                      <li class="list-disc">Full-time</li>
                                      <li class="list-disc">$130,000 - $170,000</li>
                                  </ul>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="megaStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="megaInterview" onclick="checkInterview('megaInterview','megaStatus', 'megaCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="megaRejected" onclick="checkInterview('megaRejected','megaStatus', 'megaCard')">REJECTED</button>
                                  </div>
                              </div>
-                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="megaDel" onclick="remove('megaCard','megaStatus')"></i>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="megaDel" onclick="remove('megaCard','megaStatus')"></i>
                          </div>
                          
                 <!-- startup card -->
 
                          <div class="card bg-base-100 shadow-sm" id="startupCard">
                              <div class="card-body">
-                                 <h2 class="card-title">StartupXYZ</h2>
-                                 <p class="text-base text-neutral-500 pb-3">Full Stack Engineer</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
+                                 <h2 class="card-title flex justify-center sm:justify-start">StartupXYZ</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">Full Stack Engineer</p>
+                                 <ul class="flex justify-center sm:justify-start gap-8 text-neutral-500">
                                      <li class="list-disc sm:list-none">Remote</li>
                                      <li class="list-disc">Full-time</li>
                                      <li class="list-disc">$120,000 - $160,000</li>
                                  </ul>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="startupStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="startupInterview" onclick="checkInterview('startupInterview','startupStatus', 'startupCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="startupRejected" onclick="checkInterview('startupRejected','startupStatus', 'startupCard')">REJECTED</button>
                                  </div>
                              </div>
-                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="startupDel" onclick="remove('startupCard','startupStatus')"></i>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="startupDel" onclick="remove('startupCard','startupStatus')"></i>
                          </div>
                          
                          
@@ -248,18 +252,18 @@
 
                          <div class="card bg-base-100 shadow-sm" id="techcorpCard">
                              <div class="card-body">
-                                 <h2 class="card-title">TechCorp Industries</h2>
-                                 <p class="text-base text-neutral-500 pb-3">Senior Frontend Developer</p>
-                                 <ul class="flex flex-col sm:flex-row gap-2 sm:gap-7 text-neutral-500">
+                                 <h2 class="card-title flex justify-center sm:justify-start">TechCorp Industries</h2>
+                                 <p class="text-base text-neutral-500 pb-3 flex justify-center sm:justify-start">Senior Frontend Developer</p>
+                                 <ul class="flex justify-center sm:justify-start gap-8 text-neutral-500">
                                      <li class="list-disc sm:list-none">San Francisco, CA</li>
                                      <li class="list-disc">Full-time</li>
                                      <li class="list-disc">$130,000 - $175,000</li>
                                  </ul>
                                  <br>
-                                 <div>
+                                 <div class="flex justify-center sm:justify-start">
                                      <button class="btn btn-active cursor-default  bg-[#EEF4FF] text-neutral-600 border-0 mb-2" id="techcorpStatus">NOT APPLIED</button>
                                  </div>
-                                 <p class="mb-5 text-neutral-600">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                                 <p class="mb-5 text-neutral-600 text-center sm:text-left">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                                  <!-- Interview + RejectButtons -->
                                  <div class="flex flex-col gap-2 sm:flex-row">
                                  <button class="btn btn-outline btn-success" id="techcorpInterview" onclick="checkInterview('techcorpInterview','techcorpStatus', 'techcorpCard')">INTERVIEW</button>
@@ -267,7 +271,7 @@
                                  </div>
                              </div>
                              <button>
-                                 <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="technocorpDel" onclick="remove('techcorpCard','techcorpStatus')"></i>
+                                 <i class="fa-solid fa-trash fa-xl absolute top-10 right-8 cursor-pointer" id="technocorpDel" onclick="remove('techcorpCard','techcorpStatus')"></i>
                              </button>
                          </div>
                      </div>
@@ -291,9 +295,9 @@
             <!-- no job section -->
              <section class="hidden py-10" id="noJob">
                 <div class="card bg-base-100 h-[400px] shadow-sm flex justify-center items-center">
-                    <img src="./jobs.png" alt="" class="w-[100px]">
-                    <h1 class="text-2xl font-semibold text-neutral-700">No jobs available</h1>
-                    <p class="text-neutral-500">Check back soon for new job opportunities</p>
+                    <img src="./jobs.png" alt="" class="w-[60px] sm:w-[100px]">
+                    <h1 class="sm:text-2xl font-semibold text-neutral-700">No jobs available</h1>
+                    <p class="text-sm text-neutral-500">Check back soon for new job opportunities</p>
                 </div>
              </section>
         </main>

@@ -139,4 +139,12 @@ function checkInterview(buttons,status,cardDivs){
         removing.remove();
         const removivngClone = document.getElementById(rem + "clone");
         removivngClone.remove();
+        if(totalInt===0 && !document.getElementById("intSect").classList.contains("hidden")){
+            document.getElementById("intSect").classList.add("hidden");
+            document.getElementById("noJob").classList.remove("hidden");
+        }
+        if(totalRej===0 && !document.getElementById("rejSect").classList.contains("hidden")){
+            document.getElementById("rejSect").classList.add("hidden");
+            document.getElementById("noJob").classList.remove("hidden");
+        }
     }
