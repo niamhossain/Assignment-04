@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         *{
@@ -17,7 +18,7 @@
     </style>
     <title>Job Application Tracker</title>
 </head>
-<body class="bg-base-200">
+<body class="bg-base-200 pb-7">
         <header class="w-9/12 mx-auto pt-[60px] pb-[30px] border-b-2 border-base-300">
             <h1 class="text-2xl font-bold pb-5">Job Application Tracker</h1>
 
@@ -50,7 +51,7 @@
             <section>
                 <div class="flex justify-between">
                         <h2 class="text-[20px] font-semibold">Available Jobs</h2>
-                        <p class="text-neutral-500">8 Jobs</p>
+                        <p class="text-neutral-500"> <span id="totalAppliedjobs">8</span> Jobs</p>
                     </div>
                     <!-- Buttons -->
                     <div class="flex gap-2 pt-6 mb-4">
@@ -63,11 +64,11 @@
             <section id="allSect">
                     
                     <!-- Cards -->
-                     <div class="allCardsContainer flex flex-col gap-4">
+                     <div class="flex flex-col gap-4" id="allCardContainer">
 
                 <!-- Mobile card  -->
 
-                        <div class="card bg-base-100 shadow-sm" id="mobileCard"> 
+                        <div class="card bg-base-100 shadow-sm relative" id="mobileCard"> 
                              <div class="card-body">
                                  <h2 class="card-title">Mobile First Corp</h2>
                                  <p class="text-base text-neutral-500 pb-3">React Native Developer</p>
@@ -86,6 +87,9 @@
                                  <button class="btn btn-outline btn-success" id="mblInterview" onclick="checkInterview('mblInterview','mblStatus','mobileCard')">INTERVIEW</button>
                                  <button class="btn btn-outline btn-error" id="mblRejected" onclick="checkInterview('mblRejected','mblStatus','mobileCard')">REJECTED</button>
                                  </div>
+                             </div>
+                             <div>
+                                <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="mobileDel" onclick="remove('mobileCard','mblStatus')"></i>
                              </div>
                          </div>
 
@@ -111,6 +115,7 @@
                                  <button class="btn btn-outline btn-error" id="flowRejected" onclick="checkInterview('flowRejected','flowStatus', 'flowCard')">REJECTED</button>
                                  </div>
                              </div>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="flowDel" onclick="remove('flowCard','flowStatus')"></i>
                          </div>
 
                 <!-- dataviz card -->
@@ -135,6 +140,7 @@
                                  <button class="btn btn-outline btn-error" id="datavizRejected" onclick="checkInterview('datavizRejected','datavizStatus', 'datavizCard')">REJECTED</button>
                                  </div>
                              </div>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="datavizDel" onclick="remove('datavizCard','datavizStatus')"></i>
                          </div>
 
                 <!-- cloudfirst card -->
@@ -159,6 +165,7 @@
                                  <button class="btn btn-outline btn-error" id="cloudRejected" onclick="checkInterview('cloudRejected','cloudStatus', 'cloudCard')">REJECTED</button>
                                  </div>
                              </div>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="cloudDel" onclick="remove('cloudCard','cloudStatus')"></i>
                          </div>
 
                 <!-- innovtion card -->
@@ -183,6 +190,7 @@
                                  <button class="btn btn-outline btn-error" id="innoRejected" onclick="checkInterview('innoRejected','innoStatus', 'innoCard')">REJECTED</button>
                                  </div>
                              </div>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="innoDel" onclick="remove('innoCard','innoStatus')"></i>
                          </div>
                          
                 <!-- megacorp card -->
@@ -207,6 +215,7 @@
                                  <button class="btn btn-outline btn-error" id="megaRejected" onclick="checkInterview('megaRejected','megaStatus', 'megaCard')">REJECTED</button>
                                  </div>
                              </div>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="megaDel" onclick="remove('megaCard','megaStatus')"></i>
                          </div>
                          
                 <!-- startup card -->
@@ -231,6 +240,7 @@
                                  <button class="btn btn-outline btn-error" id="startupRejected" onclick="checkInterview('startupRejected','startupStatus', 'startupCard')">REJECTED</button>
                                  </div>
                              </div>
+                             <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="startupDel" onclick="remove('startupCard','startupStatus')"></i>
                          </div>
                          
                          
@@ -256,6 +266,9 @@
                                  <button class="btn btn-outline btn-error" id="techcorpRejected" onclick="checkInterview('techcorpRejected','techcorpStatus', 'techcorpCard')">REJECTED</button>
                                  </div>
                              </div>
+                             <button>
+                                 <i class="fa-solid fa-trash fa-xl absolute top-10 right-8" id="technocorpDel" onclick="remove('techcorpCard','techcorpStatus')"></i>
+                             </button>
                          </div>
                      </div>
             </section>
@@ -274,6 +287,15 @@
 
                 </div>
             </section>
+
+            <!-- no job section -->
+             <section class="hidden py-10" id="noJob">
+                <div class="card bg-base-100 h-[400px] shadow-sm flex justify-center items-center">
+                    <img src="./jobs.png" alt="" class="w-[100px]">
+                    <h1 class="text-2xl font-semibold text-neutral-700">No jobs available</h1>
+                    <p class="text-neutral-500">Check back soon for new job opportunities</p>
+                </div>
+             </section>
         </main>
 
     <script src="./interview.js"></script>

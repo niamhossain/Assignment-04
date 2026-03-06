@@ -64,17 +64,75 @@ function checkInterview(buttons,status,cardDivs){
     const intBtn = document.getElementById("interviewButton");
     const rejBtn = document.getElementById("rejectedButton");
     allBtn.addEventListener("click", function(){
+        noPrimary();
+        allGray();
+        allBtn.classList.remove("text-neutral-500");
+        allBtn.classList.add("btn-primary");
         document.getElementById("intSect").classList.add("hidden");
         document.getElementById("rejSect").classList.add("hidden");
         document.getElementById("allSect").classList.remove("hidden");
     })
     intBtn.addEventListener("click", function(){
+        noPrimary();
+        allGray();
+        intBtn.classList.remove("text-neutral-500");
+        intBtn.classList.add("btn-primary");
         document.getElementById("allSect").classList.add("hidden");
         document.getElementById("rejSect").classList.add("hidden");
         document.getElementById("intSect").classList.remove("hidden");
+        if(totalInt===0){
+            document.getElementById("intSect").classList.add("hidden");
+            document.getElementById("noJob").classList.remove("hidden");
+        }
+        if(totalInt>0){
+            document.getElementById("noJob").classList.add("hidden");
+        }
     })
     rejBtn.addEventListener("click", function(){
+        noPrimary();
+        allGray();
+        rejBtn.classList.remove("text-neutral-500");
+        rejBtn.classList.add("btn-primary");
         document.getElementById("intSect").classList.add("hidden");
         document.getElementById("allSect").classList.add("hidden");
         document.getElementById("rejSect").classList.remove("hidden");
+        if(totalRej===0){
+            document.getElementById("rejSect").classList.add("hidden");
+            document.getElementById("noJob").classList.remove("hidden");
+        }
+        if(totalRej>0){
+            document.getElementById("noJob").classList.add("hidden");
+        }
     })
+
+    function noPrimary(){
+        allBtn.classList.remove("btn-primary");
+        rejBtn.classList.remove("btn-primary");
+        intBtn.classList.remove("btn-primary");
+    }
+    function allGray(){
+        allBtn.classList.add("text-neutral-500");
+        rejBtn.classList.add("text-neutral-500");
+        intBtn.classList.add("text-neutral-500");
+    }
+
+
+    // removing function
+    function remove(rem, stat){
+        const removing = document.getElementById(rem);
+        const remStat = document.getElementById(stat);
+        totalApply--;
+        if(remStat.innerText==="INTERVIEW"){
+            totalInt--;
+        }
+        if(remStat.innerText==="REJECTED"){
+            totalRej--;
+        }
+        document.getElementById("totalApplied").innerText = totalApply;
+        document.getElementById("totalAppliedjobs").innerText = totalApply;
+        document.getElementById("totalInterview").innerText = totalInt;
+        document.getElementById("totalRejected").innerText = totalRej;
+        removing.remove();
+        const removivngClone = document.getElementById(rem + "clone");
+        removivngClone.remove();
+    }
