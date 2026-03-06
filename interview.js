@@ -122,6 +122,10 @@ function checkInterview(buttons,status,cardDivs){
         const removing = document.getElementById(rem);
         const remStat = document.getElementById(stat);
         totalApply--;
+        if(totalApply===0){
+        const noJobSection = document.getElementById("noJob");
+        noJobSection.classList.remove("hidden");
+        }
         if(remStat.innerText==="INTERVIEW"){
             totalInt--;
         }
