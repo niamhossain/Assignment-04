@@ -71,6 +71,13 @@ function checkInterview(buttons,status,cardDivs){
         document.getElementById("intSect").classList.add("hidden");
         document.getElementById("rejSect").classList.add("hidden");
         document.getElementById("allSect").classList.remove("hidden");
+        if(totalApply===0){
+            document.getElementById("allSect").classList.add("hidden");
+            document.getElementById("noJob").classList.remove("hidden");
+        }
+        if(totalApply>0){
+            document.getElementById("noJob").classList.add("hidden");
+        }
     })
     intBtn.addEventListener("click", function(){
         noPrimary();
