@@ -22,6 +22,13 @@ function checkInterview(buttons,status,cardDivs){
             else if(button.innerText==="INTERVIEW"){
                 if(mblStatus.innerText==="REJECTED"){
                     totalRej--;
+                    if(totalRej===0){
+            document.getElementById("rejSect").classList.add("hidden");
+            document.getElementById("noJob").classList.remove("hidden");
+        }
+        if(totalRej>0){
+            document.getElementById("noJob").classList.add("hidden");
+        }
                 }
                 mblStatus.classList.remove('bg-[#EEF4FF]','btn-error');
                 mblStatus.classList.add('btn-success','text-white');
@@ -40,6 +47,13 @@ function checkInterview(buttons,status,cardDivs){
             else if(button.innerText==="REJECTED"){
                 if(mblStatus.innerText==="INTERVIEW"){
                     totalInt--;
+                    if(totalInt===0){
+                    document.getElementById("intSect").classList.add("hidden");
+                    document.getElementById("noJob").classList.remove("hidden");
+                    }
+                    if(totalInt>0){
+                        document.getElementById("noJob").classList.add("hidden");
+                    }
                 }
                 mblStatus.classList.remove('bg-[#EEF4FF]','btn-success');
                 mblStatus.classList.add('btn-error','text-white');
